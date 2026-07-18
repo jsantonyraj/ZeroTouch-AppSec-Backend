@@ -43,3 +43,4 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
         )
 
     return token
+

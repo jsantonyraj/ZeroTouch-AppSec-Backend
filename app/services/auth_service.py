@@ -2,7 +2,9 @@ from sqlalchemy.orm import Session
 
 from app.models.user import User
 from app.schemas.user import UserCreate
-from app.security.security import hash_password
+
+from app.security.security import hash_password, verify_password
+from app.security.jwt_handler import create_access_token
 
 
 def create_user(db: Session, user: UserCreate):
@@ -26,9 +28,6 @@ def create_user(db: Session, user: UserCreate):
     db.refresh(db_user)
 
     return db_user
-
-from app.security.security import verify_password
-from app.security.jwt_handler import create_access_token
 
 
 def authenticate_user(db: Session, email: str, password: str):
