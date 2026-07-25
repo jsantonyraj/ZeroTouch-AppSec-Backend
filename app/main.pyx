@@ -3,8 +3,8 @@ from app.api.v1.users import router as users_router
 from app.database.database import engine
 from app.models.user import User
 from app.models.organization import Organization
-from app.api.v1.project import router as project_router
 from app.api.v1.auth import router as auth_router
+from app.api.v1.project import router as project_router
 from app.api.v1.organizations import router as organization_router
 from app.database.database import Base
 
